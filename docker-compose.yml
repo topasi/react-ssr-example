@@ -1,0 +1,42 @@
+version: '3.8'
+
+services:
+  pnpm:
+    build:
+      context: ./
+      dockerfile: dockerfiles/pnpm.dockerfile
+    image: pnpm
+    volumes:
+      - ./src:/app
+    networks:
+      - app
+    stdin_open: true
+    tty: true
+  client:
+    build:
+      context: ./
+      dockerfile: dockerfiles/client.dockerfile
+    image: react-ssr-example-client
+    container_name: react-app
+    ports:
+      - '3000:3000'
+    volumes:
+      - ./src:/app
+    networks:
+      - app
+  server:
+    build:
+      context: ./
+      dockerfile: dockerfiles/server.dockerfile
+    image: react-ssr-example-server
+    container_name: express-app
+    ports:
+      - '5000:5000'
+    volumes:
+      - ./src:/app
+    networks:
+      - app
+
+networks:
+  app:
+    name: react-ssr-example-network
