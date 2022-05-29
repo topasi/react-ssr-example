@@ -22,11 +22,11 @@ docker-compose run --rm pnpm run build
 #### Watch react app on port 3000
 
 ```
-docker-compose up --rm -d client
+docker-compose up -d client
 ```
 
 #### Watch express app on port 5000
 
 ```
-docker-compose up --rm -d server
+docker-compose up -d server
 ```
