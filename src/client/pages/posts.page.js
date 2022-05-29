@@ -5,7 +5,6 @@ import { httpGetPosts } from '../redux/posts.action'
 
 const PostsPage = ({ posts, httpGetPosts }) => {
     // const users = useSelector((state) => state.posts)
-    console.log('posts', posts)
     const { loading, data, error } = posts
     // const dispatch = useDispatch()
     useEffect(() => {

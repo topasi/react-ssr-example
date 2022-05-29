@@ -7,7 +7,7 @@ const { HelmetProvider } = require('react-helmet-async')
 
 const AppComponent = require('../client/components/app.component').default
 
-export default function (req, store) {
+const renderer = function (req, store) {
     const rootHTML = ReactDOMServer.renderToString(
         <Provider store={store}>
             <StaticRouter location={req.originalUrl}>
@@ -36,4 +36,8 @@ export default function (req, store) {
             </body>
         </html>
     `
+}
+
+module.exports = {
+    default: renderer,
 }

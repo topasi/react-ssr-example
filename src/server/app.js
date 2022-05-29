@@ -57,6 +57,10 @@ app.use('*', async (req, res) => {
         })
 })
 
+app.on('error', (err) => {
+    console.log('Something went wrong', err)
+})
+
 app.listen(5000, () => {
     console.log('Listeing on port 5000')
 })

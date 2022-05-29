@@ -7,4 +7,6 @@ const moviesRouter = Router()
 moviesRouter.get('/', httpGetMovies)
 moviesRouter.get('/:id', httpGetMovieDetails)
 
-export default moviesRouter
+module.exports = {
+    default: moviesRouter,
+}

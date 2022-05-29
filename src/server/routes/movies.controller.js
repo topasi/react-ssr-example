@@ -27,4 +27,4 @@ const httpGetMovieDetails = async (req, res) => {
     }
 }
 
-export { httpGetMovies, httpGetMovieDetails }
+module.exports = { httpGetMovies, httpGetMovieDetails }
